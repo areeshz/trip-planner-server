@@ -2,32 +2,32 @@ const mongoose = require('mongoose')
 
 const tripSchema = new mongoose.Schema({
   title: {
-    type: String,
-    required: true
+    // required: true,
+    type: String
   },
   destination: {
-    type: String,
-    required: true
+    // required: true,
+    type: String
   },
   duration: {
-    type: Number,
-    required: true
+    // required: true,
+    type: Number
   },
   date: {
-    type: String,
-    required: true
+    // required: true,
+    type: String
   },
   budget: {
-    type: Number,
-    required: true
+    // required: true,
+    type: Number
   },
   category: {
-    type: String,
-    required: true
+    // required: true,
+    type: String
   },
   status: {
-    type: String,
-    required: true
+    // required: true,
+    type: String
   },
   owner: {
     type: mongoose.Schema.Types.ObjectId,

@@ -30,6 +30,7 @@ const router = express.Router()
 router.get('/trips', (req, res, next) => { // add back requireToken as second argument
   // find all trips and send back as JSON response
   Trip.find()
+    .populate('owner')
     .then(trips => {
       res.status(200).json({trips})
     })
