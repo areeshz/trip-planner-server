@@ -27,9 +27,9 @@ const router = express.Router()
 
 // define routes
 // index (GET)
-router.get('/trips', (req, res, next) => { // add back requireToken as second argument
+router.get('/trips', requireToken, (req, res, next) => {
   // find all trips and send back as JSON response
-  Trip.find()
+  Trip.find({owner: req.user.id})
     .populate('owner')
     .then(trips => {
       res.status(200).json({trips})
@@ -49,7 +49,7 @@ router.post('/trips', requireToken, (req, res, next) => {
 })
 
 // show (GET)
-router.get('/trips/:id', (req, res, next) => { // add back requireToken as second argument
+router.get('/trips/:id', requireToken, (req, res, next) => {
   const tripId = req.params.id
   Trip.findById(tripId)
     .populate('owner')
