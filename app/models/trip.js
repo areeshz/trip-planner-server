@@ -1,34 +1,36 @@
 const mongoose = require('mongoose')
+const eventSchema = require('./event.js')
 
 const tripSchema = new mongoose.Schema({
   title: {
-    // required: true,
+    required: true,
     type: String
   },
   destination: {
-    // required: true,
+    required: true,
     type: String
   },
   duration: {
-    // required: true,
+    required: true,
     type: Number
   },
   date: {
-    // required: true,
+    required: true,
     type: String
   },
   budget: {
-    // required: true,
+    required: true,
     type: Number
   },
   category: {
-    // required: true,
+    required: true,
     type: String
   },
   status: {
-    // required: true,
+    required: true,
     type: String
   },
+  events: [eventSchema],
   owner: {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
