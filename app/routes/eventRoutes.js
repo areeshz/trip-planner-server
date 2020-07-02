@@ -45,6 +45,22 @@ router.post('/trips/:tripId/events', requireToken, (req, res, next) => {
     .catch(next)
 })
 
+// show (GET)
+router.get('/trips/:tripId/events/:eventId', requireToken, (req, res, next) => {
+  const tripId = req.params.tripId
+  const eventId = req.params.eventId
+  Trip.findById(tripId)
+    .then(handle404)
+    .then(trip => {
+      // find the specific event
+      let event = trip.events.id(eventId)
+      // handle404 if the event does not exist
+      event = handle404(event)
+      res.status(200).json({event: event})
+    })
+    .catch(next)
+})
+
 // update (PATCH)
 router.patch('/trips/:tripId/events/:eventId', requireToken, removeBlanks, (req, res, next) => {
   const tripId = req.params.tripId
