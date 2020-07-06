@@ -4,7 +4,6 @@ const mongoose = require('mongoose')
 const cors = require('cors')
 
 // require route files
-const exampleRoutes = require('./app/routes/example_routes') // REMOVE THIS
 const userRoutes = require('./app/routes/user_routes')
 const tripRoutes = require('./app/routes/tripRoutes.js')
 const eventRoutes = require('./app/routes/eventRoutes.js')
