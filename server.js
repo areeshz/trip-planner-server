@@ -66,7 +66,6 @@ app.use(requestLogger)
 app.get('/', (req, res, next) => {
   res.send('Hello and welcome. To access our resources, please request a specific path!')
 })
-app.use(exampleRoutes)
 app.use(userRoutes)
 app.use(tripRoutes)
 app.use(eventRoutes)
