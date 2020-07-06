@@ -1,5 +1,3 @@
-
-
 # Trip Planner Server
 
 The Trip Planner Server is an API created in Node and Express that utilizes MongoDB to store and retrieve trip data logged by users of the Trip Planner Client Application. It also allows users to register for accounts on the application.
@@ -113,18 +111,7 @@ All data returned from API actions is formatted as JSON.
 
 ### signup
 
-The `create` action expects a *POST* of `credentials` identifying a new user to
-create, e.g. using `getFormFields`:
-
-```html
-<form>
-  <input name="credentials[email]" type="text" value="an@example.email">
-  <input name="credentials[password]" type="password" value="an example password">
-  <input name="credentials[password_confirmation]" type="password" value="an example password">
-</form>
-```
-
-or using `JSON`:
+The `create` action expects a *POST* of `credentials` identifying a new user to create, e.g.:
 
 ```json
 {
@@ -158,17 +145,7 @@ Request, and the response body will be empty.
 
 ### signin
 
-The `signin` action expects a *POST* with `credentials` identifying a previously
-registered user, e.g.:
-
-```html
-<form>
-  <input name="credentials[email]" type="text" value="an@example.email">
-  <input name="credentials[password]" type="password" value="an example password">
-</form>
-```
-
-or:
+The `signin` action expects a *POST* with `credentials` identifying a previously registered user, e.g.:
 
 ```json
 {
@@ -212,17 +189,7 @@ Unauthorized.
 
 ### changepw
 
-The `changepw` action expects a PATCH of `passwords` specifying the `old` and
-`new`, eg.:
-
-```html
-<form>
-  <input name="passwords[old]" type="password">
-  <input name="passwords[new]" type="password">
-</form>
-```
-
-or:
+The `changepw` action expects a PATCH of `passwords` specifying the `old` and `new`, eg.:
 
 ```json
 {
